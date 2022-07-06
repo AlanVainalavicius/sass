@@ -1,0 +1,101 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0; }
+
+.nav1 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
+
+.div {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "header header header header" "main main main main" "main main main main" "main main main main" "footer footer footer footer";
+  background-color: pink;
+  color: black; }
+
+.header {
+  grid-area: header;
+  background-color: violet;
+  background-image: linear-gradient(90deg, #eeaeca 0%, #94bbe9 100%); }
+
+.img {
+  display: flex;
+  align-items: center; }
+
+.nav1 {
+  display: flex;
+  align-content: stretch;
+  justify-content: space-around;
+  margin-top: 10px; }
+  .nav1 li {
+    list-style: none;
+    margin: 20px; }
+    .nav1 li:hover {
+      background-color: orange;
+      transition: 1s;
+      transform: scale(1.5);
+      animation-name: CambioColor;
+      animation-duration: 3s;
+      animation-iteration-count: infinite; }
+  .nav1 a {
+    text-decoration: none;
+    color: black; }
+
+/* MAIN */
+.main {
+  grid-area: main;
+  background-color: aqua;
+  height: 75vh; }
+
+.servicios {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  height: 100%; }
+  .servicios a {
+    display: flex;
+    height: 100%;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    justify-content: center;
+    align-items: flex-end; }
+
+.pestañas, .cejas, .makeup, .tendencias {
+  background-image: url(../img/09e62e44028da53a65c112767eca4397.jpg);
+  background-size: 100%; }
+  .pestañas:hover, .cejas:hover, .makeup:hover, .tendencias:hover {
+    transition: 1s;
+    transform: scale(1.5); }
+
+@keyframes CambioColor {
+  0% {
+    background-color: pink; }
+  50% {
+    background-color: aqua; } }
+
+/* FOOTER */
+.footer {
+  grid-area: footer;
+  background-image: radial-gradient(circle, #b53ffb 10%, rgba(252, 70, 197, 0) 100%); }
+
+.footer1 {
+  display: flex;
+  align-content: stretch;
+  justify-content: space-around;
+  list-style: none;
+  height: 50px;
+  color: red; }
+  .footer1 li:hover {
+    background-color: orange;
+    transform: skew(-25deg); }
+
+/* MEDIA QUERY-MOBILE LAST */
+@media (max-width: 375px) {
+  .nav1 {
+    flex-direction: column;
+    align-items: center; }
+  .img {
+    align-items: center;
+    transform: translate(50px) rotate(25deg);
+    height: 250px; } }
